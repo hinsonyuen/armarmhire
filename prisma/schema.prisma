@@ -1,0 +1,177 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+// One row per searchable role (sourced from every sheet in DummyVar.xlsx
+// starting from the 4th sheet — each of those is a role, e.g.
+// "Data Engineer", "Financial Analyst"). The candidates page uses `slug`
+// to look up which sheet / keyword set to filter on.
+model Role {
+  id       String  @id @default(cuid())
+  code     String  @unique // display code, e.g. "001"
+  name     String // e.g. "Data Engineer"
+  slug     String  @unique // e.g. "data-engineer"
+  category String // e.g. "Technology & Engineering"
+  skills   Skill[]
+  roleMatches CandidateRoleMatch[]
+
+  @@index([category])
+  @@index([name])
+}
+
+// One row per candidate, mirroring the "Dummy candidates" sheet.
+// Ed/Career scores are imported as-is from the workbook (already computed
+// there against UniRank / LargeCo lookups) — this app does not recompute
+// them yet, per the earlier decision to defer live university/company
+// matching.
+model Candidate {
+  id          String  @id @default(cuid())
+  sourceIndex Int     @unique // row index from the source sheet, used only by the seed script
+  linkedin    String
+  email       String?
+  name        String
+  location    String?
+
+  // Structured experience blocks (Employer, Position Title, Approx
+  // Hours/Week, Work Mode, Time Period, Location, Description), up to 5,
+  // in order. Replaces the old free-text `experience` blob — stored as
+  // JSON since nothing needs to query into individual sub-fields
+  // relationally.
+  experiences Json
+
+  // Single education entry (replaces the old University #1/#2 pair —
+  // the source data no longer has two).
+  degreeType           String?
+  institution          String?
+  educationTimePeriod  String?
+  educationDescription String?
+
+  // Self-reported skill tags, straight from the source data. Not
+  // currently used for automated role/skill matching (that still runs
+  // against experience Description text) — stored for display and
+  // potential future use.
+  skills String[]
+
+  uniRank Int?
+
+  mbn              Float? // M/B/N education-level multiplier
+  grossEdScore     Float?
+  weightedEdScore  Float?
+  expTime          Float? // weightedExpTime
+  largeCoMatch     Float?
+  grossCaScore     Float?
+  weightedCaScore  Float?
+  totalScore       Float?
+
+  // Predicted industry from the ML industry classifier, computed offline
+  // by ml/classify_candidates.py and loaded by the seed script from
+  // prisma/data/candidate-industries.json. Null until that script has run.
+  industry            String? // top-1 prediction, one of the 21 industries
+  industryProbability Float?
+  industryConfident   Boolean? // top-1 probability cleared the model's confident-mode threshold
+  industryTop3        Json? // [{ industry, probability }] x3, best first
+
+  skillMatches CandidateSkillMatch[]
+  roleMatches  CandidateRoleMatch[]
+
+  @@index([totalScore])
+  @@index([location])
+  @@index([industry])
+}
+
+// One row per skill within a role (e.g. "Python programming" under Data
+// Engineer). `keywords` holds every keyword variant listed in the source
+// sheet for that skill — used to (re-)compute matches later if candidate
+// data changes; matching itself already ran once at import time.
+model Skill {
+  id       String   @id @default(cuid())
+  slug     String   @unique // deterministic, e.g. "data-engineer--python-programming"
+  name     String
+  keywords String[]
+  roleId   String
+  role     Role     @relation(fields: [roleId], references: [id], onDelete: Cascade)
+  matches  CandidateSkillMatch[]
+
+  @@unique([roleId, name])
+  @@index([roleId])
+}
+
+// Precomputed candidate <-> skill match, one row per (candidate, skill)
+// pair where at least one keyword (or the skill name itself) fuzzy- or
+// exact-matched somewhere in the candidate's experience text.
+// `keywordCount` is the number of DISTINCT keywords (+ skill name) that
+// matched, regardless of repeats — used to rank candidates when one or
+// more skills are selected in the Skills search (summed across skills
+// when multiple are selected).
+model CandidateSkillMatch {
+  id           String    @id @default(cuid())
+  candidateId  String
+  skillId      String
+  keywordCount Int
+  candidate    Candidate @relation(fields: [candidateId], references: [id], onDelete: Cascade)
+  skill        Skill     @relation(fields: [skillId], references: [id], onDelete: Cascade)
+
+  @@unique([candidateId, skillId])
+  @@index([skillId])
+  @@index([candidateId])
+}
+
+// Precomputed candidate <-> role fit: one row per (candidate, role) pair
+// where at least one keyword from any skill under that role appears in
+// the candidate's experience text. `keywordCount` is the total number of
+// keyword occurrences (counting repeats) across the whole role's keyword
+// set for that candidate — logged now for future sorting-by-relevance,
+// not yet used to order results.
+model CandidateRoleMatch {
+  id           String    @id @default(cuid())
+  candidateId  String
+  roleId       String
+  keywordCount Int
+  candidate    Candidate @relation(fields: [candidateId], references: [id], onDelete: Cascade)
+  role         Role      @relation(fields: [roleId], references: [id], onDelete: Cascade)
+
+  @@unique([candidateId, roleId])
+  @@index([roleId])
+  @@index([candidateId])
+}
+// Reference list of "large/prestigious" companies (LargeCo List sheet).
+// Not used for live matching yet (candidates.largeCoMatch is imported
+// precomputed) — kept for when live company matching is built.
+model LargeCo {
+  id   String @id @default(cuid())
+  name String @unique
+}
+
+// Reference QS university ranking list (QS Uni Rank sheet). Same
+// deferred-matching status as LargeCo above. `rank` is the raw display
+// value from the sheet (e.g. "1", "951-1000", "1401+") — not always a
+// plain integer, so it's stored as text. `numericRank` is the normalized
+// integer used for actual sorting/comparison.
+model University {
+  id          String  @id @default(cuid())
+  rank        String?
+  name        String
+  lookupName  String  @unique
+  numericRank Int?
+}
+
+// Singleton employer profile — this app has no login/session system, so
+// there's only ever one profile, always read/written at a fixed id
+// ("default") rather than looked up per-user.
+model EmployerProfile {
+  id                String   @id @default(cuid())
+  companyName       String?
+  location          String?
+  email             String?
+  phone             String?
+  linkedin          String?
+  profilePictureUrl String?
+  attachments       Json? // array of { name: string, url: string, size: number }
+  createdAt         DateTime @default(now())
+  updatedAt         DateTime @updatedAt
+}

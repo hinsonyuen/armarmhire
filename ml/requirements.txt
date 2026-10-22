@@ -1,0 +1,9 @@
+# For ml/classify_candidates.py (CPU is fine).
+# Match scikit-learn to the version Colab used when it saved tfidf_model.joblib
+# (run `!pip show scikit-learn` in Colab) if you see a version warning.
+torch
+transformers>=4.40
+scikit-learn
+joblib
+numpy
+scipy

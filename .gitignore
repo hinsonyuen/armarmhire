@@ -1,0 +1,12 @@
+node_modules
+.next
+.env
+.env.local
+*.tsbuildinfo
+next-env.d.ts
+public/uploads/*
+!public/uploads/.gitkeep
+
+# ML model folders (hundreds of MB) and Python caches
+ml/models/
+__pycache__/

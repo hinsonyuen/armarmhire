@@ -1,0 +1,590 @@
+{
+ "data-engineer": {
+  "primary": "Data & AI/ML",
+  "secondary": [
+   "Software & Technology"
+  ]
+ },
+ "data-analyst": {
+  "primary": "Data & AI/ML",
+  "secondary": [
+   "Consulting"
+  ]
+ },
+ "bi-developer": {
+  "primary": "Data & AI/ML",
+  "secondary": [
+   "Software & Technology"
+  ]
+ },
+ "data-scientist": {
+  "primary": "Data & AI/ML",
+  "secondary": []
+ },
+ "cloud-engineer": {
+  "primary": "Software & Technology",
+  "secondary": []
+ },
+ "sre": {
+  "primary": "Software & Technology",
+  "secondary": []
+ },
+ "devops-engineer": {
+  "primary": "Software & Technology",
+  "secondary": []
+ },
+ "product-manager": {
+  "primary": "Design & Product",
+  "secondary": [
+   "Software & Technology"
+  ]
+ },
+ "platform-engineer": {
+  "primary": "Software & Technology",
+  "secondary": []
+ },
+ "ux-ui-designer": {
+  "primary": "Design & Product",
+  "secondary": []
+ },
+ "technical-program-mgr": {
+  "primary": "Operations & Supply Chain",
+  "secondary": [
+   "Software & Technology"
+  ]
+ },
+ "qa-test-engineer": {
+  "primary": "Software & Technology",
+  "secondary": []
+ },
+ "mobile-developer": {
+  "primary": "Software & Technology",
+  "secondary": []
+ },
+ "data-governance-ai-ethics": {
+  "primary": "Data & AI/ML",
+  "secondary": []
+ },
+ "full-stack-developer": {
+  "primary": "Software & Technology",
+  "secondary": []
+ },
+ "backend-swe": {
+  "primary": "Software & Technology",
+  "secondary": []
+ },
+ "frontend-swe": {
+  "primary": "Software & Technology",
+  "secondary": [
+   "Design & Product"
+  ]
+ },
+ "ai-ml-engineer": {
+  "primary": "Data & AI/ML",
+  "secondary": [
+   "Software & Technology"
+  ]
+ },
+ "electrical-engineering": {
+  "primary": "Hardware & Engineering",
+  "secondary": []
+ },
+ "semiconductor": {
+  "primary": "Hardware & Engineering",
+  "secondary": []
+ },
+ "cloud-solutions-architect": {
+  "primary": "Software & Technology",
+  "secondary": []
+ },
+ "generative-ai-llm-engineer": {
+  "primary": "Data & AI/ML",
+  "secondary": [
+   "Software & Technology"
+  ]
+ },
+ "mlops-engineer": {
+  "primary": "Data & AI/ML",
+  "secondary": [
+   "Software & Technology"
+  ]
+ },
+ "ai-product-manager": {
+  "primary": "Design & Product",
+  "secondary": [
+   "Data & AI/ML"
+  ]
+ },
+ "it-project-manager": {
+  "primary": "Operations & Supply Chain",
+  "secondary": [
+   "Software & Technology"
+  ]
+ },
+ "network-engineer": {
+  "primary": "Software & Technology",
+  "secondary": [
+   "Cybersecurity"
+  ]
+ },
+ "robotics-engineer": {
+  "primary": "Hardware & Engineering",
+  "secondary": [
+   "Software & Technology"
+  ]
+ },
+ "blockchain-developer": {
+  "primary": "Software & Technology",
+  "secondary": [
+   "Finance & Fintech"
+  ]
+ },
+ "ar-vr-xr-developer": {
+  "primary": "Software & Technology",
+  "secondary": []
+ },
+ "it-desktop-support-specialist": {
+  "primary": "Software & Technology",
+  "secondary": []
+ },
+ "systems-administrator": {
+  "primary": "Software & Technology",
+  "secondary": []
+ },
+ "database-administrator": {
+  "primary": "Data & AI/ML",
+  "secondary": [
+   "Software & Technology"
+  ]
+ },
+ "analytics-engineer": {
+  "primary": "Data & AI/ML",
+  "secondary": []
+ },
+ "business-systems-analyst": {
+  "primary": "Consulting",
+  "secondary": [
+   "Software & Technology"
+  ]
+ },
+ "erp-business-analyst": {
+  "primary": "Consulting",
+  "secondary": [
+   "Software & Technology"
+  ]
+ },
+ "sales-solutions-engineer": {
+  "primary": "Sales & Business Development",
+  "secondary": [
+   "Software & Technology"
+  ]
+ },
+ "automation-engineer-rpa": {
+  "primary": "Software & Technology",
+  "secondary": []
+ },
+ "quantum-computing-engineer": {
+  "primary": "Software & Technology",
+  "secondary": [
+   "Hardware & Engineering"
+  ]
+ },
+ "technical-writer": {
+  "primary": "Software & Technology",
+  "secondary": [
+   "Media & Entertainment"
+  ]
+ },
+ "game-developer": {
+  "primary": "Software & Technology",
+  "secondary": [
+   "Media & Entertainment"
+  ]
+ },
+ "security-analyst": {
+  "primary": "Cybersecurity",
+  "secondary": []
+ },
+ "soc-analyst": {
+  "primary": "Cybersecurity",
+  "secondary": []
+ },
+ "penetration-tester": {
+  "primary": "Cybersecurity",
+  "secondary": []
+ },
+ "security-engineer": {
+  "primary": "Cybersecurity",
+  "secondary": []
+ },
+ "cloud-security-engineer": {
+  "primary": "Cybersecurity",
+  "secondary": []
+ },
+ "grc-compliance": {
+  "primary": "Cybersecurity",
+  "secondary": [
+   "Legal"
+  ]
+ },
+ "incident-responder": {
+  "primary": "Cybersecurity",
+  "secondary": []
+ },
+ "application-security": {
+  "primary": "Cybersecurity",
+  "secondary": []
+ },
+ "devsecops-engineer": {
+  "primary": "Cybersecurity",
+  "secondary": []
+ },
+ "iam-specialist": {
+  "primary": "Cybersecurity",
+  "secondary": []
+ },
+ "threat-intelligence": {
+  "primary": "Cybersecurity",
+  "secondary": []
+ },
+ "ot-ics-security": {
+  "primary": "Cybersecurity",
+  "secondary": []
+ },
+ "security-architect": {
+  "primary": "Cybersecurity",
+  "secondary": []
+ },
+ "vulnerability-management": {
+  "primary": "Cybersecurity",
+  "secondary": []
+ },
+ "security-leadership": {
+  "primary": "Cybersecurity",
+  "secondary": []
+ },
+ "management-consultant": {
+  "primary": "Consulting",
+  "secondary": []
+ },
+ "business-operations-consultant": {
+  "primary": "Consulting",
+  "secondary": [
+   "Operations & Supply Chain"
+  ]
+ },
+ "financial-management-consultant": {
+  "primary": "Consulting",
+  "secondary": [
+   "Finance & Fintech"
+  ]
+ },
+ "it-technology-consultant": {
+  "primary": "Consulting",
+  "secondary": [
+   "Software & Technology"
+  ]
+ },
+ "hr-people-org-consultant": {
+  "primary": "Consulting",
+  "secondary": [
+   "HR & People Operations"
+  ]
+ },
+ "risk-compliance-consultant": {
+  "primary": "Consulting",
+  "secondary": [
+   "Finance & Fintech"
+  ]
+ },
+ "ma-advisory-consultant": {
+  "primary": "Consulting",
+  "secondary": [
+   "Finance & Fintech"
+  ]
+ },
+ "supply-chain-consultant": {
+  "primary": "Consulting",
+  "secondary": [
+   "Operations & Supply Chain"
+  ]
+ },
+ "healthcare-consultant": {
+  "primary": "Consulting",
+  "secondary": [
+   "Healthcare"
+  ]
+ },
+ "marketing-consultant": {
+  "primary": "Consulting",
+  "secondary": [
+   "Marketing & Digital Media"
+  ]
+ },
+ "sustainability-esg-consultant": {
+  "primary": "Consulting",
+  "secondary": []
+ },
+ "real-estate-consultant": {
+  "primary": "Consulting",
+  "secondary": [
+   "Construction & Skilled Trades"
+  ]
+ },
+ "public-sector-consultant": {
+  "primary": "Consulting",
+  "secondary": []
+ },
+ "economic-litigation-consultant": {
+  "primary": "Consulting",
+  "secondary": [
+   "Legal"
+  ]
+ },
+ "restructuring-consultant": {
+  "primary": "Consulting",
+  "secondary": [
+   "Finance & Fintech"
+  ]
+ },
+ "customer-experience-consultant": {
+  "primary": "Consulting",
+  "secondary": []
+ },
+ "pricing-monetization-consultant": {
+  "primary": "Consulting",
+  "secondary": []
+ },
+ "innovation-rd-consultant": {
+  "primary": "Consulting",
+  "secondary": []
+ },
+ "energy-utilities-consultant": {
+  "primary": "Consulting",
+  "secondary": [
+   "Hardware & Engineering"
+  ]
+ },
+ "cybersecurity-consultant": {
+  "primary": "Consulting",
+  "secondary": [
+   "Cybersecurity"
+  ]
+ },
+ "data-analytics-consultant": {
+  "primary": "Consulting",
+  "secondary": [
+   "Data & AI/ML"
+  ]
+ },
+ "tax-consultant": {
+  "primary": "Consulting",
+  "secondary": [
+   "Finance & Fintech"
+  ]
+ },
+ "legal-regulatory-consultant": {
+  "primary": "Consulting",
+  "secondary": [
+   "Legal"
+  ]
+ },
+ "retail-cpg-consultant": {
+  "primary": "Consulting",
+  "secondary": [
+   "Retail & Consumer Goods"
+  ]
+ },
+ "manufacturing-consultant": {
+  "primary": "Consulting",
+  "secondary": [
+   "Hardware & Engineering"
+  ]
+ },
+ "telecom-media-consultant": {
+  "primary": "Consulting",
+  "secondary": [
+   "Media & Entertainment"
+  ]
+ },
+ "financial-services-consultant": {
+  "primary": "Consulting",
+  "secondary": [
+   "Finance & Fintech"
+  ]
+ },
+ "financial-analyst": {
+  "primary": "Finance & Fintech",
+  "secondary": []
+ },
+ "ib-analyst-associate": {
+  "primary": "Finance & Fintech",
+  "secondary": []
+ },
+ "equity-research-analyst": {
+  "primary": "Finance & Fintech",
+  "secondary": []
+ },
+ "portfolio-manager": {
+  "primary": "Finance & Fintech",
+  "secondary": []
+ },
+ "risk-manager": {
+  "primary": "Finance & Fintech",
+  "secondary": []
+ },
+ "treasury-analyst": {
+  "primary": "Finance & Fintech",
+  "secondary": []
+ },
+ "financial-controller": {
+  "primary": "Finance & Fintech",
+  "secondary": []
+ },
+ "credit-analyst": {
+  "primary": "Finance & Fintech",
+  "secondary": []
+ },
+ "pe-vc-analyst": {
+  "primary": "Finance & Fintech",
+  "secondary": []
+ },
+ "quantitative-analyst-quant": {
+  "primary": "Finance & Fintech",
+  "secondary": [
+   "Data & AI/ML"
+  ]
+ },
+ "fpanda-manager": {
+  "primary": "Finance & Fintech",
+  "secondary": []
+ },
+ "cfo-finance-executive": {
+  "primary": "Finance & Fintech",
+  "secondary": []
+ },
+ "financial-compliance-officer": {
+  "primary": "Finance & Fintech",
+  "secondary": [
+   "Legal"
+  ]
+ },
+ "actuary": {
+  "primary": "Finance & Fintech",
+  "secondary": []
+ },
+ "insurance-underwriter": {
+  "primary": "Finance & Fintech",
+  "secondary": []
+ },
+ "wealth-manager-advisor": {
+  "primary": "Finance & Fintech",
+  "secondary": []
+ },
+ "hedge-fund-analyst": {
+  "primary": "Finance & Fintech",
+  "secondary": []
+ },
+ "trader-sales-and-trading": {
+  "primary": "Finance & Fintech",
+  "secondary": []
+ },
+ "financial-reporting-manager": {
+  "primary": "Finance & Fintech",
+  "secondary": []
+ },
+ "internal-auditor": {
+  "primary": "Finance & Fintech",
+  "secondary": []
+ },
+ "corporate-tax-manager": {
+  "primary": "Finance & Fintech",
+  "secondary": []
+ },
+ "corp-development-ma-manager": {
+  "primary": "Finance & Fintech",
+  "secondary": []
+ },
+ "ap-ar-manager": {
+  "primary": "Finance & Fintech",
+  "secondary": []
+ },
+ "budget-analyst": {
+  "primary": "Finance & Fintech",
+  "secondary": []
+ },
+ "financial-systems-analyst": {
+  "primary": "Finance & Fintech",
+  "secondary": [
+   "Software & Technology"
+  ]
+ },
+ "structured-finance-analyst": {
+  "primary": "Finance & Fintech",
+  "secondary": []
+ },
+ "fixed-income-analyst": {
+  "primary": "Finance & Fintech",
+  "secondary": []
+ },
+ "fx-trader-analyst": {
+  "primary": "Finance & Fintech",
+  "secondary": []
+ },
+ "commercial-banking-rm": {
+  "primary": "Finance & Fintech",
+  "secondary": []
+ },
+ "investor-relations-manager": {
+  "primary": "Finance & Fintech",
+  "secondary": []
+ },
+ "forensic-accountant": {
+  "primary": "Finance & Fintech",
+  "secondary": []
+ },
+ "mortgage-underwriter": {
+  "primary": "Finance & Fintech",
+  "secondary": []
+ },
+ "reit-analyst": {
+  "primary": "Finance & Fintech",
+  "secondary": [
+   "Construction & Skilled Trades"
+  ]
+ },
+ "derivatives-trader-analyst": {
+  "primary": "Finance & Fintech",
+  "secondary": []
+ },
+ "commodities-trader": {
+  "primary": "Finance & Fintech",
+  "secondary": []
+ },
+ "capital-markets-analyst": {
+  "primary": "Finance & Fintech",
+  "secondary": []
+ },
+ "aml-financial-crime-analyst": {
+  "primary": "Finance & Fintech",
+  "secondary": [
+   "Legal"
+  ]
+ },
+ "external-financial-auditor": {
+  "primary": "Finance & Fintech",
+  "secondary": []
+ },
+ "pension-fund-manager": {
+  "primary": "Finance & Fintech",
+  "secondary": []
+ },
+ "esg-finance-analyst": {
+  "primary": "Finance & Fintech",
+  "secondary": []
+ },
+ "chief-risk-officer-cro": {
+  "primary": "Finance & Fintech",
+  "secondary": []
+ }
+}

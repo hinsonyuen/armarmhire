@@ -1,0 +1,740 @@
+[
+  {
+    "code": "001",
+    "name": "Data Engineer",
+    "slug": "data-engineer",
+    "category": "Technology & Engineering"
+  },
+  {
+    "code": "002",
+    "name": "Data Analyst",
+    "slug": "data-analyst",
+    "category": "Technology & Engineering"
+  },
+  {
+    "code": "003",
+    "name": "BI Developer",
+    "slug": "bi-developer",
+    "category": "Technology & Engineering"
+  },
+  {
+    "code": "004",
+    "name": "Data Scientist",
+    "slug": "data-scientist",
+    "category": "Technology & Engineering"
+  },
+  {
+    "code": "005",
+    "name": "Cloud Engineer",
+    "slug": "cloud-engineer",
+    "category": "Technology & Engineering"
+  },
+  {
+    "code": "006",
+    "name": "SRE",
+    "slug": "sre",
+    "category": "Technology & Engineering"
+  },
+  {
+    "code": "007",
+    "name": "DevOps Engineer",
+    "slug": "devops-engineer",
+    "category": "Technology & Engineering"
+  },
+  {
+    "code": "008",
+    "name": "Product Manager",
+    "slug": "product-manager",
+    "category": "Technology & Engineering"
+  },
+  {
+    "code": "009",
+    "name": "Platform Engineer",
+    "slug": "platform-engineer",
+    "category": "Technology & Engineering"
+  },
+  {
+    "code": "010",
+    "name": "UX UI Designer",
+    "slug": "ux-ui-designer",
+    "category": "Technology & Engineering"
+  },
+  {
+    "code": "011",
+    "name": "Technical Program Mgr",
+    "slug": "technical-program-mgr",
+    "category": "Technology & Engineering"
+  },
+  {
+    "code": "012",
+    "name": "QA Test Engineer",
+    "slug": "qa-test-engineer",
+    "category": "Technology & Engineering"
+  },
+  {
+    "code": "013",
+    "name": "Mobile Developer",
+    "slug": "mobile-developer",
+    "category": "Technology & Engineering"
+  },
+  {
+    "code": "014",
+    "name": "Data Governance AI Ethics",
+    "slug": "data-governance-ai-ethics",
+    "category": "Technology & Engineering"
+  },
+  {
+    "code": "015",
+    "name": "Full Stack Developer",
+    "slug": "full-stack-developer",
+    "category": "Technology & Engineering"
+  },
+  {
+    "code": "016",
+    "name": "Backend SWE",
+    "slug": "backend-swe",
+    "category": "Technology & Engineering"
+  },
+  {
+    "code": "017",
+    "name": "Frontend SWE",
+    "slug": "frontend-swe",
+    "category": "Technology & Engineering"
+  },
+  {
+    "code": "018",
+    "name": "AI ML Engineer",
+    "slug": "ai-ml-engineer",
+    "category": "Technology & Engineering"
+  },
+  {
+    "code": "019",
+    "name": "Electrical Engineering",
+    "slug": "electrical-engineering",
+    "category": "Technology & Engineering"
+  },
+  {
+    "code": "020",
+    "name": "Semiconductor",
+    "slug": "semiconductor",
+    "category": "Technology & Engineering"
+  },
+  {
+    "code": "021",
+    "name": "Cloud Solutions Architect",
+    "slug": "cloud-solutions-architect",
+    "category": "Technology & Engineering"
+  },
+  {
+    "code": "022",
+    "name": "Generative AI LLM Engineer",
+    "slug": "generative-ai-llm-engineer",
+    "category": "Technology & Engineering"
+  },
+  {
+    "code": "023",
+    "name": "MLOps Engineer",
+    "slug": "mlops-engineer",
+    "category": "Technology & Engineering"
+  },
+  {
+    "code": "024",
+    "name": "AI Product Manager",
+    "slug": "ai-product-manager",
+    "category": "Technology & Engineering"
+  },
+  {
+    "code": "025",
+    "name": "IT Project Manager",
+    "slug": "it-project-manager",
+    "category": "Technology & Engineering"
+  },
+  {
+    "code": "026",
+    "name": "Network Engineer",
+    "slug": "network-engineer",
+    "category": "Technology & Engineering"
+  },
+  {
+    "code": "027",
+    "name": "Robotics Engineer",
+    "slug": "robotics-engineer",
+    "category": "Technology & Engineering"
+  },
+  {
+    "code": "028",
+    "name": "Blockchain Developer",
+    "slug": "blockchain-developer",
+    "category": "Technology & Engineering"
+  },
+  {
+    "code": "029",
+    "name": "AR VR XR Developer",
+    "slug": "ar-vr-xr-developer",
+    "category": "Technology & Engineering"
+  },
+  {
+    "code": "030",
+    "name": "IT Desktop Support Specialist",
+    "slug": "it-desktop-support-specialist",
+    "category": "Technology & Engineering"
+  },
+  {
+    "code": "031",
+    "name": "Systems Administrator",
+    "slug": "systems-administrator",
+    "category": "Technology & Engineering"
+  },
+  {
+    "code": "032",
+    "name": "Database Administrator",
+    "slug": "database-administrator",
+    "category": "Technology & Engineering"
+  },
+  {
+    "code": "033",
+    "name": "Analytics Engineer",
+    "slug": "analytics-engineer",
+    "category": "Technology & Engineering"
+  },
+  {
+    "code": "034",
+    "name": "Business Systems Analyst",
+    "slug": "business-systems-analyst",
+    "category": "Technology & Engineering"
+  },
+  {
+    "code": "035",
+    "name": "ERP Business Analyst",
+    "slug": "erp-business-analyst",
+    "category": "Technology & Engineering"
+  },
+  {
+    "code": "036",
+    "name": "Sales Solutions Engineer",
+    "slug": "sales-solutions-engineer",
+    "category": "Technology & Engineering"
+  },
+  {
+    "code": "037",
+    "name": "Automation Engineer RPA",
+    "slug": "automation-engineer-rpa",
+    "category": "Technology & Engineering"
+  },
+  {
+    "code": "038",
+    "name": "Quantum Computing Engineer",
+    "slug": "quantum-computing-engineer",
+    "category": "Technology & Engineering"
+  },
+  {
+    "code": "039",
+    "name": "Technical Writer",
+    "slug": "technical-writer",
+    "category": "Technology & Engineering"
+  },
+  {
+    "code": "040",
+    "name": "Game Developer",
+    "slug": "game-developer",
+    "category": "Technology & Engineering"
+  },
+  {
+    "code": "041",
+    "name": "Security Analyst",
+    "slug": "security-analyst",
+    "category": "Cybersecurity"
+  },
+  {
+    "code": "042",
+    "name": "SOC Analyst",
+    "slug": "soc-analyst",
+    "category": "Cybersecurity"
+  },
+  {
+    "code": "043",
+    "name": "Penetration Tester",
+    "slug": "penetration-tester",
+    "category": "Cybersecurity"
+  },
+  {
+    "code": "044",
+    "name": "Security Engineer",
+    "slug": "security-engineer",
+    "category": "Cybersecurity"
+  },
+  {
+    "code": "045",
+    "name": "Cloud Security Engineer",
+    "slug": "cloud-security-engineer",
+    "category": "Cybersecurity"
+  },
+  {
+    "code": "046",
+    "name": "GRC Compliance",
+    "slug": "grc-compliance",
+    "category": "Cybersecurity"
+  },
+  {
+    "code": "047",
+    "name": "Incident Responder",
+    "slug": "incident-responder",
+    "category": "Cybersecurity"
+  },
+  {
+    "code": "048",
+    "name": "Application Security",
+    "slug": "application-security",
+    "category": "Cybersecurity"
+  },
+  {
+    "code": "049",
+    "name": "DevSecOps Engineer",
+    "slug": "devsecops-engineer",
+    "category": "Cybersecurity"
+  },
+  {
+    "code": "050",
+    "name": "IAM Specialist",
+    "slug": "iam-specialist",
+    "category": "Cybersecurity"
+  },
+  {
+    "code": "051",
+    "name": "Threat Intelligence",
+    "slug": "threat-intelligence",
+    "category": "Cybersecurity"
+  },
+  {
+    "code": "052",
+    "name": "OT ICS Security",
+    "slug": "ot-ics-security",
+    "category": "Cybersecurity"
+  },
+  {
+    "code": "053",
+    "name": "Security Architect",
+    "slug": "security-architect",
+    "category": "Cybersecurity"
+  },
+  {
+    "code": "054",
+    "name": "Vulnerability Management",
+    "slug": "vulnerability-management",
+    "category": "Cybersecurity"
+  },
+  {
+    "code": "055",
+    "name": "Security Leadership",
+    "slug": "security-leadership",
+    "category": "Cybersecurity"
+  },
+  {
+    "code": "056",
+    "name": "Management Consultant",
+    "slug": "management-consultant",
+    "category": "Consulting"
+  },
+  {
+    "code": "057",
+    "name": "Business Operations Consultant",
+    "slug": "business-operations-consultant",
+    "category": "Consulting"
+  },
+  {
+    "code": "058",
+    "name": "Financial Management Consultant",
+    "slug": "financial-management-consultant",
+    "category": "Consulting"
+  },
+  {
+    "code": "059",
+    "name": "IT Technology Consultant",
+    "slug": "it-technology-consultant",
+    "category": "Consulting"
+  },
+  {
+    "code": "060",
+    "name": "HR People Org Consultant",
+    "slug": "hr-people-org-consultant",
+    "category": "Consulting"
+  },
+  {
+    "code": "061",
+    "name": "Risk Compliance Consultant",
+    "slug": "risk-compliance-consultant",
+    "category": "Consulting"
+  },
+  {
+    "code": "062",
+    "name": "MA Advisory Consultant",
+    "slug": "ma-advisory-consultant",
+    "category": "Consulting"
+  },
+  {
+    "code": "063",
+    "name": "Supply Chain Consultant",
+    "slug": "supply-chain-consultant",
+    "category": "Consulting"
+  },
+  {
+    "code": "064",
+    "name": "Healthcare Consultant",
+    "slug": "healthcare-consultant",
+    "category": "Consulting"
+  },
+  {
+    "code": "065",
+    "name": "Marketing Consultant",
+    "slug": "marketing-consultant",
+    "category": "Consulting"
+  },
+  {
+    "code": "066",
+    "name": "Sustainability ESG Consultant",
+    "slug": "sustainability-esg-consultant",
+    "category": "Consulting"
+  },
+  {
+    "code": "067",
+    "name": "Real Estate Consultant",
+    "slug": "real-estate-consultant",
+    "category": "Consulting"
+  },
+  {
+    "code": "068",
+    "name": "Public Sector Consultant",
+    "slug": "public-sector-consultant",
+    "category": "Consulting"
+  },
+  {
+    "code": "069",
+    "name": "Economic Litigation Consultant",
+    "slug": "economic-litigation-consultant",
+    "category": "Consulting"
+  },
+  {
+    "code": "070",
+    "name": "Restructuring Consultant",
+    "slug": "restructuring-consultant",
+    "category": "Consulting"
+  },
+  {
+    "code": "071",
+    "name": "Customer Experience Consultant",
+    "slug": "customer-experience-consultant",
+    "category": "Consulting"
+  },
+  {
+    "code": "072",
+    "name": "Pricing Monetization Consultant",
+    "slug": "pricing-monetization-consultant",
+    "category": "Consulting"
+  },
+  {
+    "code": "073",
+    "name": "Innovation RD Consultant",
+    "slug": "innovation-rd-consultant",
+    "category": "Consulting"
+  },
+  {
+    "code": "074",
+    "name": "Energy Utilities Consultant",
+    "slug": "energy-utilities-consultant",
+    "category": "Consulting"
+  },
+  {
+    "code": "075",
+    "name": "Cybersecurity Consultant",
+    "slug": "cybersecurity-consultant",
+    "category": "Consulting"
+  },
+  {
+    "code": "076",
+    "name": "Data Analytics Consultant",
+    "slug": "data-analytics-consultant",
+    "category": "Consulting"
+  },
+  {
+    "code": "077",
+    "name": "Tax Consultant",
+    "slug": "tax-consultant",
+    "category": "Consulting"
+  },
+  {
+    "code": "078",
+    "name": "Legal Regulatory Consultant",
+    "slug": "legal-regulatory-consultant",
+    "category": "Consulting"
+  },
+  {
+    "code": "079",
+    "name": "Retail CPG Consultant",
+    "slug": "retail-cpg-consultant",
+    "category": "Consulting"
+  },
+  {
+    "code": "080",
+    "name": "Manufacturing Consultant",
+    "slug": "manufacturing-consultant",
+    "category": "Consulting"
+  },
+  {
+    "code": "081",
+    "name": "Telecom Media Consultant",
+    "slug": "telecom-media-consultant",
+    "category": "Consulting"
+  },
+  {
+    "code": "082",
+    "name": "Financial Services Consultant",
+    "slug": "financial-services-consultant",
+    "category": "Consulting"
+  },
+  {
+    "code": "083",
+    "name": "Financial Analyst",
+    "slug": "financial-analyst",
+    "category": "Finance"
+  },
+  {
+    "code": "084",
+    "name": "IB Analyst Associate",
+    "slug": "ib-analyst-associate",
+    "category": "Finance"
+  },
+  {
+    "code": "085",
+    "name": "Equity Research Analyst",
+    "slug": "equity-research-analyst",
+    "category": "Finance"
+  },
+  {
+    "code": "086",
+    "name": "Portfolio Manager",
+    "slug": "portfolio-manager",
+    "category": "Finance"
+  },
+  {
+    "code": "087",
+    "name": "Risk Manager",
+    "slug": "risk-manager",
+    "category": "Finance"
+  },
+  {
+    "code": "088",
+    "name": "Treasury Analyst",
+    "slug": "treasury-analyst",
+    "category": "Finance"
+  },
+  {
+    "code": "089",
+    "name": "Financial Controller",
+    "slug": "financial-controller",
+    "category": "Finance"
+  },
+  {
+    "code": "090",
+    "name": "Credit Analyst",
+    "slug": "credit-analyst",
+    "category": "Finance"
+  },
+  {
+    "code": "091",
+    "name": "PE VC Analyst",
+    "slug": "pe-vc-analyst",
+    "category": "Finance"
+  },
+  {
+    "code": "092",
+    "name": "Quantitative Analyst Quant",
+    "slug": "quantitative-analyst-quant",
+    "category": "Finance"
+  },
+  {
+    "code": "093",
+    "name": "FP&A Manager",
+    "slug": "fpanda-manager",
+    "category": "Finance"
+  },
+  {
+    "code": "094",
+    "name": "CFO Finance Executive",
+    "slug": "cfo-finance-executive",
+    "category": "Finance"
+  },
+  {
+    "code": "095",
+    "name": "Financial Compliance Officer",
+    "slug": "financial-compliance-officer",
+    "category": "Finance"
+  },
+  {
+    "code": "096",
+    "name": "Actuary",
+    "slug": "actuary",
+    "category": "Finance"
+  },
+  {
+    "code": "097",
+    "name": "Insurance Underwriter",
+    "slug": "insurance-underwriter",
+    "category": "Finance"
+  },
+  {
+    "code": "098",
+    "name": "Wealth Manager Advisor",
+    "slug": "wealth-manager-advisor",
+    "category": "Finance"
+  },
+  {
+    "code": "099",
+    "name": "Hedge Fund Analyst",
+    "slug": "hedge-fund-analyst",
+    "category": "Finance"
+  },
+  {
+    "code": "100",
+    "name": "Trader Sales and Trading",
+    "slug": "trader-sales-and-trading",
+    "category": "Finance"
+  },
+  {
+    "code": "101",
+    "name": "Financial Reporting Manager",
+    "slug": "financial-reporting-manager",
+    "category": "Finance"
+  },
+  {
+    "code": "102",
+    "name": "Internal Auditor",
+    "slug": "internal-auditor",
+    "category": "Finance"
+  },
+  {
+    "code": "103",
+    "name": "Corporate Tax Manager",
+    "slug": "corporate-tax-manager",
+    "category": "Finance"
+  },
+  {
+    "code": "104",
+    "name": "Corp Development MA Manager",
+    "slug": "corp-development-ma-manager",
+    "category": "Finance"
+  },
+  {
+    "code": "105",
+    "name": "AP AR Manager",
+    "slug": "ap-ar-manager",
+    "category": "Finance"
+  },
+  {
+    "code": "106",
+    "name": "Budget Analyst",
+    "slug": "budget-analyst",
+    "category": "Finance"
+  },
+  {
+    "code": "107",
+    "name": "Financial Systems Analyst",
+    "slug": "financial-systems-analyst",
+    "category": "Finance"
+  },
+  {
+    "code": "108",
+    "name": "Structured Finance Analyst",
+    "slug": "structured-finance-analyst",
+    "category": "Finance"
+  },
+  {
+    "code": "109",
+    "name": "Fixed Income Analyst",
+    "slug": "fixed-income-analyst",
+    "category": "Finance"
+  },
+  {
+    "code": "110",
+    "name": "FX Trader Analyst",
+    "slug": "fx-trader-analyst",
+    "category": "Finance"
+  },
+  {
+    "code": "111",
+    "name": "Commercial Banking RM",
+    "slug": "commercial-banking-rm",
+    "category": "Finance"
+  },
+  {
+    "code": "112",
+    "name": "Investor Relations Manager",
+    "slug": "investor-relations-manager",
+    "category": "Finance"
+  },
+  {
+    "code": "113",
+    "name": "Forensic Accountant",
+    "slug": "forensic-accountant",
+    "category": "Finance"
+  },
+  {
+    "code": "114",
+    "name": "Mortgage Underwriter",
+    "slug": "mortgage-underwriter",
+    "category": "Finance"
+  },
+  {
+    "code": "115",
+    "name": "REIT Analyst",
+    "slug": "reit-analyst",
+    "category": "Finance"
+  },
+  {
+    "code": "116",
+    "name": "Derivatives Trader Analyst",
+    "slug": "derivatives-trader-analyst",
+    "category": "Finance"
+  },
+  {
+    "code": "117",
+    "name": "Commodities Trader",
+    "slug": "commodities-trader",
+    "category": "Finance"
+  },
+  {
+    "code": "118",
+    "name": "Capital Markets Analyst",
+    "slug": "capital-markets-analyst",
+    "category": "Finance"
+  },
+  {
+    "code": "119",
+    "name": "AML Financial Crime Analyst",
+    "slug": "aml-financial-crime-analyst",
+    "category": "Finance"
+  },
+  {
+    "code": "120",
+    "name": "External Financial Auditor",
+    "slug": "external-financial-auditor",
+    "category": "Finance"
+  },
+  {
+    "code": "121",
+    "name": "Pension Fund Manager",
+    "slug": "pension-fund-manager",
+    "category": "Finance"
+  },
+  {
+    "code": "122",
+    "name": "ESG Finance Analyst",
+    "slug": "esg-finance-analyst",
+    "category": "Finance"
+  },
+  {
+    "code": "123",
+    "name": "Chief Risk Officer CRO",
+    "slug": "chief-risk-officer-cro",
+    "category": "Finance"
+  }
+]
