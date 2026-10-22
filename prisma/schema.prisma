@@ -160,11 +160,95 @@ model University {
   numericRank Int?
 }
 
-// Singleton employer profile — this app has no login/session system, so
-// there's only ever one profile, always read/written at a fixed id
-// ("default") rather than looked up per-user.
+// A recruiter account. Created (without a password) when someone starts
+// sign-up with their email; `emailVerified` and `passwordHash` are set
+// together once they open the emailed link and choose a password, so an
+// account with a null passwordHash can't log in. `onboardedAt` is set
+// when the recruiter profile form is submitted. Job seekers don't have
+// accounts yet.
+model User {
+  id            String    @id @default(cuid())
+  email         String    @unique // stored lower-cased
+  passwordHash  String? // "scrypt$<salt>$<hash>", see lib/password.ts
+  emailVerified DateTime?
+  onboardedAt   DateTime?
+  createdAt     DateTime  @default(now())
+  updatedAt     DateTime  @updatedAt
+
+  sessions           Session[]
+  verificationTokens EmailVerificationToken[]
+  recruiterProfile   RecruiterProfile?
+  employerProfile    EmployerProfile?
+}
+
+// Login session. The cookie holds a random token; only its SHA-256 is
+// stored, so a leaked database can't be used to hijack sessions.
+model Session {
+  id        String   @id @default(cuid())
+  tokenHash String   @unique
+  userId    String
+  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  expiresAt DateTime
+  createdAt DateTime @default(now())
+
+  @@index([userId])
+}
+
+// One-time sign-up link. Same hashing scheme as Session.
+model EmailVerificationToken {
+  id        String   @id @default(cuid())
+  tokenHash String   @unique
+  userId    String
+  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  expiresAt DateTime
+  createdAt DateTime @default(now())
+
+  @@index([userId])
+}
+
+// What a recruiter fills in right after creating their password.
+model RecruiterProfile {
+  id     String @id @default(cuid())
+  userId String @unique
+  user   User   @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  // About the recruiter
+  firstName String
+  lastName  String
+  jobTitle  String
+  phone     String?
+  linkedin  String?
+
+  // Who they hire for. "in_house" recruiters hire for their own employer;
+  // "agency" recruiters work for `agencyName` and hire on behalf of
+  // `companyName` (the client).
+  recruiterType  String // "in_house" | "agency"
+  agencyName     String?
+  companyName    String
+  companyWebsite String?
+  companyIndustry String // one of the 21 classifier industries
+  companySize    String // e.g. "51-200"
+  companyCountry String
+  companyCity    String?
+
+  // What they're hiring for
+  hiringRoles      String[] // role names from the Role table
+  hiringLocations  String[] // metro areas / "Remote"
+  openPositions    String? // rough count band, e.g. "1-5"
+  hiringTimeline   String? // e.g. "Immediately", "Within 3 months"
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+// Employer profile shown on /profile. Was a singleton before accounts
+// existed; now one per recruiter via `userId`, pre-filled from the
+// recruiter profile at onboarding. Rows created before accounts have a
+// null userId and are no longer shown.
 model EmployerProfile {
   id                String   @id @default(cuid())
+  userId            String?  @unique
+  user              User?    @relation(fields: [userId], references: [id], onDelete: Cascade)
   companyName       String?
   location          String?
   email             String?

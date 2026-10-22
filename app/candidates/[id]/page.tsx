@@ -2,6 +2,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { prisma } from "@/lib/prisma";
 import { initials } from "@/lib/initials";
+import { requireRecruiterPage } from "@/lib/auth";
 
 export const dynamic = "force-dynamic";
 
@@ -21,6 +22,7 @@ export default async function CandidateDetailPage({
 }: {
   params: { id: string };
 }) {
+  await requireRecruiterPage(`/candidates/${params.id}`);
   const candidate = await prisma.candidate.findUnique({
     where: { id: params.id },
   });

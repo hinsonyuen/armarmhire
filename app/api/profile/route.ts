@@ -3,21 +3,22 @@ import { writeFile, mkdir } from "node:fs/promises";
 import path from "node:path";
 import { randomUUID } from "node:crypto";
 import { prisma } from "@/lib/prisma";
+import { requireRecruiterApi } from "@/lib/auth";
 
 export const dynamic = "force-dynamic";
 
 type Attachment = { name: string; url: string; size: number };
 
-// This app has no login/session system, so there's only ever one
-// employer profile — always the first (and only) row, not looked up
-// by any per-user key.
-async function getSingleton() {
-  return prisma.employerProfile.findFirst({ orderBy: { createdAt: "asc" } });
+// One employer profile per logged-in recruiter (created at onboarding).
+async function getForUser(userId: string) {
+  return prisma.employerProfile.findUnique({ where: { userId } });
 }
 
 export async function GET() {
   try {
-    const profile = await getSingleton();
+    const auth = await requireRecruiterApi();
+    if (auth.response) return auth.response;
+    const profile = await getForUser(auth.user.id);
     return NextResponse.json({ profile });
   } catch (err) {
     console.error("profile GET error:", err);
@@ -43,6 +44,9 @@ async function saveUploadedFile(file: File): Promise<Attachment> {
 
 export async function POST(req: NextRequest) {
   try {
+    const auth = await requireRecruiterApi();
+    if (auth.response) return auth.response;
+
     const form = await req.formData();
 
     const companyName = (form.get("companyName") as string) || null;
@@ -68,7 +72,7 @@ export async function POST(req: NextRequest) {
     const profilePictureFile = form.get("profilePicture");
     const clearProfilePicture = form.get("clearProfilePicture") === "true";
 
-    const existing = await getSingleton();
+    const existing = await getForUser(auth.user.id);
 
     let profilePictureUrl = existing?.profilePictureUrl ?? null;
     if (clearProfilePicture) {
@@ -93,7 +97,9 @@ export async function POST(req: NextRequest) {
           where: { id: existing.id },
           data,
         })
-      : await prisma.employerProfile.create({ data });
+      : await prisma.employerProfile.create({
+          data: { ...data, userId: auth.user.id },
+        });
 
     return NextResponse.json({ profile });
   } catch (err) {

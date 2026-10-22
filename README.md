@@ -42,10 +42,62 @@ to `/candidates`, which is now the app's landing experience.
   Experience #1–#5 — pulled directly from the Candidate record.
 
 **Profile page** (`/profile`)
-- Unchanged from before: Company Name/Name, Profile Picture, Location,
-  Email, Phone (optional), LinkedIn (optional), Attachments (optional),
-  and a dead-link "Email format" section. Still local-state only, not
-  persisted to the database yet.
+- Company Name/Name, Profile Picture, Location, Email, Phone (optional),
+  LinkedIn (optional), Attachments (optional). One per recruiter account,
+  pre-filled at onboarding (see "Recruiter accounts" below).
+
+## Recruiter accounts: sign-up, email confirmation, log in
+
+The recruiter pages (`/candidates`, `/candidates/[id]`, `/profile`) and
+the recruiter APIs (`/api/role-fit`, `/api/skill-fit`,
+`/api/candidates/export`, `/api/profile`) now require a logged-in
+recruiter. Logged-out visitors are sent to `/login` and returned to the
+page they wanted afterwards. Job-seeker sign-up is unchanged and needs no
+account.
+
+**Sign-up flow**
+1. `/signup` → **Recruiter** → `/signup/recruiter`: enter a work email.
+2. An email with a confirmation link is sent (valid 24 hours; only the
+   newest link works; a new one can be requested after 60 seconds).
+3. The link opens `/signup/recruiter/verify`: choose a password (8+
+   characters with at least one letter and one number). This confirms
+   the email and logs the recruiter in.
+4. `/onboarding`: the recruiter profile form. About you (first/last name,
+   job title, phone, LinkedIn); who you hire for (in-house or agency, with
+   agency name, company/client name, website, industry from the
+   classifier's 21 industries, company size, HQ country and city); and
+   what you hire for (roles from the 123-role list, hiring locations or
+   Remote, open positions, timeline). Submitting it also pre-fills the
+   recruiter's employer profile on `/profile`, then opens `/candidates`.
+
+Signing up with an email that already has an account shows the same
+"check your email" screen, and that address receives a "you already have
+an account, log in here" email instead, so the form can't be used to find
+out who is registered.
+
+**How it works**
+- Tables: `User`, `Session`, `EmailVerificationToken`, `RecruiterProfile`;
+  `EmployerProfile` now has a `userId` (one per recruiter; it was a single
+  shared row before).
+- Passwords are hashed with Node's built-in scrypt (`lib/password.ts`).
+- Sessions: a random token in an httpOnly cookie (`armarmhire_session`,
+  30 days); only its SHA-256 is stored. `middleware.ts` redirects requests
+  that have no cookie; pages and APIs validate the session through
+  `lib/auth.ts`.
+- Email: `lib/email.ts`, sent over SMTP using `SMTP_*` in `.env`.
+
+**Reading the emails locally.** `docker compose up -d` now also starts
+**Mailpit**, a test inbox: every email the app sends is caught there
+(nothing reaches real addresses). Open **http://localhost:8025** to see
+it and click the confirmation link. For real delivery, put your email
+provider's SMTP settings in `.env` and set `APP_URL` to the site's public
+address. If `SMTP_HOST` is empty, emails are printed in the `npm run dev`
+console instead.
+
+**Not built yet:** password reset ("forgot password"), changing email or
+password, editing the onboarding answers after sign-up (company details
+can be changed on `/profile`), rate limiting on log-in attempts, and
+accounts for job seekers.
 
 ## Industry classifier in role search (v31, setup fixes v32)
 
@@ -652,7 +704,9 @@ Or run the steps manually:
    different, so it won't conflict if you have another project's Postgres
    container also running on 5432). Data persists in a named Docker
    volume (`armarmhire_pgdata`) across restarts; `docker compose down -v`
-   would wipe it if you ever want a completely clean slate.
+   would wipe it if you ever want a completely clean slate. It also
+   starts `armarmhire-mailpit-1`, the local test inbox for sign-up
+   emails (http://localhost:8025).
 2. Install dependencies:
    ```bash
    npm install
@@ -675,8 +729,9 @@ Or run the steps manually:
    ```bash
    npm run dev
    ```
-   Visit http://localhost:3000 (or whatever port it prints) — you'll land
-   on `/candidates`.
+   Visit http://localhost:3000 (or whatever port it prints). You'll be
+   asked to log in; choose **Sign up → Recruiter** to create an account
+   and read the confirmation email at http://localhost:8025.
 
 **If you were previously using the shared Hazard Tracker Postgres
 container:** you can leave that one alone (or remove the `prohyre`

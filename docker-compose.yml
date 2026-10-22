@@ -18,5 +18,15 @@ services:
       timeout: 5s
       retries: 20
 
+  # Local test inbox for sign-up emails. Catches everything sent to
+  # port 1025; read the emails at http://localhost:8025. Nothing is
+  # delivered to real addresses.
+  mailpit:
+    image: axllent/mailpit:v1.21
+    restart: unless-stopped
+    ports:
+      - '1025:1025'
+      - '8025:8025'
+
 volumes:
   armarmhire_pgdata:

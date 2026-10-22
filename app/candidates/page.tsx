@@ -1,6 +1,8 @@
 import Link from "next/link";
 import { prisma } from "@/lib/prisma";
 import CandidatesBoard from "@/components/CandidatesBoard";
+import UserMenu from "@/components/UserMenu";
+import { requireRecruiterPage } from "@/lib/auth";
 
 export const dynamic = "force-dynamic";
 
@@ -17,6 +19,7 @@ const CANDIDATE_SELECT = {
 } as const;
 
 export default async function CandidatesPage() {
+  const user = await requireRecruiterPage("/candidates");
   const candidates = await prisma.candidate.findMany({
     select: CANDIDATE_SELECT,
   });
@@ -31,26 +34,7 @@ export default async function CandidatesPage() {
           >
             ArmArmHire
           </Link>
-          <div className="flex items-center gap-2">
-            <Link
-              href="/profile"
-              className="flex items-center gap-2 rounded-lg py-1.5 pl-1.5 pr-4 text-sm font-medium text-text-muted transition-colors hover:bg-surface hover:text-text"
-            >
-              <span
-                aria-hidden
-                className="flex h-8 w-8 items-center justify-center rounded-full bg-brand-light text-sm font-semibold text-brand-ink"
-              >
-                E
-              </span>
-              Profile
-            </Link>
-            <Link
-              href="/login"
-              className="rounded-lg px-4 py-1.5 text-sm font-medium text-text-muted transition-colors hover:bg-surface hover:text-text"
-            >
-              Log out
-            </Link>
-          </div>
+          <UserMenu user={user} />
         </div>
       </header>
 

@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 import * as XLSX from "xlsx";
 import { prisma } from "@/lib/prisma";
+import { requireRecruiterApi } from "@/lib/auth";
 
 export const dynamic = "force-dynamic";
 
@@ -8,6 +9,9 @@ export const dynamic = "force-dynamic";
 // Body: { candidateIds: string[] }
 // Returns an .xlsx file of the requested candidates.
 export async function POST(req: NextRequest) {
+  const auth = await requireRecruiterApi();
+  if (auth.response) return auth.response;
+
   let body: { candidateIds?: unknown };
   try {
     body = await req.json();

@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 import { prisma } from "@/lib/prisma";
+import { requireRecruiterApi } from "@/lib/auth";
 
 export const dynamic = "force-dynamic";
 
@@ -9,6 +10,9 @@ export const dynamic = "force-dynamic";
 // rank candidates when multiple skills are selected. With a single skill
 // selected, the sum is just that skill's own count.
 export async function GET(req: NextRequest) {
+  const auth = await requireRecruiterApi();
+  if (auth.response) return auth.response;
+
   const slugsParam = req.nextUrl.searchParams.get("skills");
   if (!slugsParam) {
     return NextResponse.json({ error: "Missing skills" }, { status: 400 });

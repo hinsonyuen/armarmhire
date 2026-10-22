@@ -1,7 +1,11 @@
 import Link from "next/link";
 import ProfileForm from "@/components/ProfileForm";
+import { requireRecruiterPage } from "@/lib/auth";
 
-export default function ProfilePage() {
+export const dynamic = "force-dynamic";
+
+export default async function ProfilePage() {
+  await requireRecruiterPage("/profile");
   return (
     <div className="min-h-screen bg-surface">
       <header className="border-b border-border bg-card">

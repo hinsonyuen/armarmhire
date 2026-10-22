@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 import { prisma } from "@/lib/prisma";
+import { requireRecruiterApi } from "@/lib/auth";
 import {
   industriesForRole,
   industryFit,
@@ -21,6 +22,9 @@ export const dynamic = "force-dynamic";
 // prediction yet (ml/classify_candidates.py hasn't been run) — the app
 // then falls back to keyword matching alone, exactly as before.
 export async function GET(req: NextRequest) {
+  const auth = await requireRecruiterApi();
+  if (auth.response) return auth.response;
+
   const slug = req.nextUrl.searchParams.get("role");
   if (!slug) {
     return NextResponse.json({ error: "Missing role" }, { status: 400 });
